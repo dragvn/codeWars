@@ -30,21 +30,41 @@
         //check if more than 3
 
 function likes(names){
-    if(names.length > 3){
-        console.log(`${names[0]}, ${names[1]}, and ${names.length-2} others like this`)
-    }else if(names.length === 3){
-        console.log(`${names[0]}, ${names[1]}, and ${names[2]} like this`)
-    }else if(names.length === 2){
-        console.log(`${names[0]} and ${names[1]} like this`)
-    }else if(names.length === 1){
-        console.log(`${names[0]} likes this`)
-    }else{
-        console.log('no one likes this')
+    if(names.length > 3) return(`${names[0]}, ${names[1]}, and ${names.length-2} others like this`)
+    if(names.length === 3) return(`${names[0]}, ${names[1]}, and ${names[2]} like this`)
+    if(names.length === 2) return(`${names[0]} and ${names[1]} like this`)
+    if(names.length === 1) return(`${names[0]} likes this`)
+    return console.log('no one likes this')
+}
+
+
+function likesRefactor(names){
+    switch(true){
+        case names.length > 3:
+            console.log(`${names[0]}, ${names[1]}, and ${names.length-2} others like this`)
+            break
+        case names.length === 3:
+            console.log(`${names[0]}, ${names[1]}, and ${names[2]} like this`)
+            break
+        case names.length === 2:
+            console.log(`${names[0]} and ${names[1]} like this`)
+            break
+        case names.length === 1:
+            console.log(`${names[0]} likes this`)
+            break
+        default:
+            console.log('no one likes this')
     }
 }
+
 
 //TESTS
 likes([])
 likes(['Leroy', 'Jimi'])
 likes(['Leroy', 'Jimi', 'Donny'])
 likes(['Leroy', 'Jimi', 'Donny', 'Toot'])
+
+likesRefactor([])
+likesRefactor(['Leroy', 'Jimi'])
+likesRefactor(['Leroy', 'Jimi', 'Donny'])
+likesRefactor(['Leroy', 'Jimi', 'Donny', 'Toot'])
