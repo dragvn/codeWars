@@ -26,7 +26,7 @@
         return "You're a(n) adult";
         } else {
         return "You're a(n) elderly";
-        }
+        } 
     }
 
 //SOLUTION
