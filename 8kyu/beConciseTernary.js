@@ -17,20 +17,26 @@
 //ORIGINAL FUNCTION
     // TODO: Refactor and shorten the function
 
-    function describeAge(age) {
-        if (age <= 12) {
-        return "You're a(n) kid";
-        } else if (age >= 13 && age <= 17) {
-        return "You're a(n) teenager";
-        } else if (age >= 18 && age <= 64) {
-        return "You're a(n) adult";
-        } else {
-        return "You're a(n) elderly";
-        } 
-    }
+    // function describeAge(age) {
+    //     if (age <= 12) {
+    //     return "You're a(n) kid";
+    //     } else if (age >= 13 && age <= 17) {
+    //     return "You're a(n) teenager";
+    //     } else if (age >= 18 && age <= 64) {
+    //     return "You're a(n) adult";
+    //     } else {
+    //     return "You're a(n) elderly";
+    //     } 
+    // }
 
 //SOLUTION
-const describeAge = age => age <= 12 ? "message1" 
-    : age >= 13 && age <= 17 ? "message2" 
-    : age >= 18 && age <= 64 ? "message3" 
-    : "message4"
+// const describeAge = age => age <= 12 ? "message1" 
+//     : age >= 13 && age <= 17 ? "message2" 
+//     : age >= 18 && age <= 64 ? "message3" 
+//     : "message4"
+
+const describeAge = age => `You're a(n) ${age <= 12 ? 'kid' : age >= 13 && age <= 17 ? 'teenager' : age >= 18 && age <= 64 ? 'adult' : 'elderly'}` 
+
+console.log(describeAge(10))
+console.log(describeAge(21))
+console.log(describeAge(70))
